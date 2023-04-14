@@ -1,6 +1,7 @@
 const track = require('./tracker')
 const mod = require('.')
 
+// even before jest.mock is called track contains a mocked version of ./data -> [Function: bound push] { tracks: [ 'data-mock', 'index' ] }
 jest.mock('./data', () => {
   track('data-mock')
   return {isMock: true}
